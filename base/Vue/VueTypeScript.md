@@ -3,3 +3,10 @@
 > Vue3 基于 Vue2 使用 TypeScript 重构
 >
 > Typescrip
+
+
+
+
+
+不要在router.beforeEach
+

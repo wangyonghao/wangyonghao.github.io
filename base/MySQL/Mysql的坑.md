@@ -1,6 +1,8 @@
 # Mysql的坑
 
+### 永远不要在 MySQL 中使用 UTF-8
 
+https://www.cnblogs.com/wbxk/p/10785517.html
 
 ### error: 1366 Incorrect string value: '\xF0\x9F\x8D\xB5'
 
