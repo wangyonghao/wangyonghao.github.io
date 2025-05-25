@@ -10,6 +10,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允许工作流写入仓库内容
+      pages: write    # 允许工作流管理 GitHub Pages 部署
+      id-token: write # 允许工作流获取 OIDC ID token，这是 actions/deploy-pages 所需的
     steps:
     - name: Checkout
       uses: actions/checkout@v4
