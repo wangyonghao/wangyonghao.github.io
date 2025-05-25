@@ -22,7 +22,7 @@ features:
   - title: 软技能
     details: 需求管理、团队工具、项目管理工具、监控工具
   - title: Ideas
-    dettails: 学习新技术、技术调研、性能测试、各类 idea、技术愿望清单、ToDo
+    details: 学习新技术、技术调研、性能测试、各类 idea、技术愿望清单、ToDo
   - title: 工具箱
     details: Git、Github、Gitlab、Jenkins、Ldap
   - title: 代码

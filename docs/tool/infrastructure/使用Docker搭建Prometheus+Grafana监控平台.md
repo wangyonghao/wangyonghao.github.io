@@ -1,9 +1,5 @@
 
 
-
-
-
-
 ```
 kubectl create namespace monitor
 ```
@@ -18,7 +14,6 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 helm repo update
 helm search
-
 
 http://mirror.azure.cn/kubernetes/charts
 ```

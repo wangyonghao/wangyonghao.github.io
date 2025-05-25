@@ -18,15 +18,15 @@
 
 ### 防火墙命令
 
-`firewall-cmd --state`查看防火墙状态
+- `firewall-cmd --state`查看防火墙状态
 
-`firewall-cmd --zone=public --list-ports`查看开放的端口
+- `firewall-cmd --zone=public --list-ports`查看开放的端口
 
-`firewall-cmd --zone=public --add-port=8080/tcp --permanent` 添加一个永久开放端口
+- `firewall-cmd --zone=public --add-port=8080/tcp --permanent` 添加一个永久开放端口
 
-`firewall-cmd --zone=public --remove-port=8080/tcp --permanent`删除一个永久开放端口
+- `firewall-cmd --zone=public --remove-port=8080/tcp --permanent`删除一个永久开放端口
 
-`firewall-cmd --reload` 重新加载配置，新增/删除开放端口时需要重新加载才能生效
+- `firewall-cmd --reload` 重新加载配置，新增/删除开放端口时需要重新加载才能生效
 
 ### systemd服务管理
 

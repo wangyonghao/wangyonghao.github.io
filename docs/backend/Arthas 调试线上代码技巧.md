@@ -28,21 +28,17 @@
 
 ## 启动
 
-
-
 ```bash
 curl -O https://arthas.aliyun.com/arthas-boot.jar
 java -jar arthas-boot.jar
 ```
-
-
 
 ## 反编译代码
 
 
 
 ```bash
-jad –source-only com.ams.testarthas.IndexController test --lineNumber false
+jad –-source-only com.ams.testarthas.IndexController test --lineNumber false
 
 jad --source-only com.amg. starthas. TestConstants hello --lineNumber false
 ```

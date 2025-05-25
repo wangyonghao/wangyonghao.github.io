@@ -3,92 +3,201 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
-  title: "知然空间",
+  title: "WYH的知识库",
   description: "全栈 + 偏后端 + 懂运维 + 有系统性思维",
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    // 启用模糊全文搜索
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: '架构师视角', link: '/architecture/' },
-      {
-        text: '技术知识',
-        items: [
-          { text: '前端', link: '/frontend/' },
-          { text: '后端', link: '/backend/' },
-          { text: '运维', link: '/operation/' },
-          { text: '软能力', link: '/skills/' },
-        ]
-      },
-      { text: '项目', link: '/projects/' },
-      { text: '最佳实践', link: '/best-practices/' },
-      { text: '软能力', link: '/skills/' },
-      { text: '研发工具集', link: '/tools/' },
-      { text: '导航站', link: '/nav-site/' },
+      { text: '后端', link: '/backend/' },
+      { text: '前端', link: '/frontend/' },
+      { text: 'DevOps', link: '/ops/' },
+      { text: '项目管理', link: '/projects/' },
+      { text: '工具箱', link: '/tool/' },
     ],
-
     sidebar: {
       '/architecture/': [
         {
-          text: '架构师视角',
+          text: '系统设计',
+          link: '/architecture/',
+          collapsed: false,
           items: [
-            { text: '访问远程服务', link: '/architecture/api-examples' },
-            { text: '事务处理', link: '/architecture/api-examples' },
-            { text: '架构安全性', link: '/architecture/api-examples' },
+            { text: '系统架构', link: '/architecture/system-architecture' },
+            { text: '分布式系统', link: '/architecture/distributed-system' },
+            { text: '微服务', link: '/architecture/micro-service' },
+            { text: '数据存储', link: '/architecture/data-storage'},
           ]
         },
-        { text: 'abc', link: '/api-examples' }
+        {
+          text: 'Web 安全设计',
+          link: '/architecture/web-security',
+          collapsed: true,
+          items: [
+            { text: '认识安全漏洞', link: '/architecture/web-security/xss' },
+            { text: 'CVSS评分', link: '/architecture/web-security/csrf' },
+            { text: '安全加固', link: '/architecture/web-security/sql-injection' },
+          ]
+        },
+        {
+          text:'认证',
+        }
       ],
-
       '/backend/': [
         {
-          text: '后端',
+          text: 'Java',
           items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
-          ]
-        }
-      ],
-      '/front/': [
-        {
-          text: '前端',
-          items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
-          ]
-        }
-      ],
-      '/tools/': [
-        {
-          text: '消息队列',
-          items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
+            { text: 'Java知识体系', link: '/architecture/api-examples' },
+            { text: 'JVM', link: '/architecture/api-examples' },
+            { text: 'Java框架', link: '/architecture/api-examples' },
+            { text: '安装ITAS应用', link: '/architecture/api-examples' },
+            {
+              text: '设计模式',
+              link: '/backend/java/design-patterns',
+              collapsed: true,
+              items: [
+                {
+                  text: '创建型模式',
+                  items: [
+                    { text: '工厂方法', link: '/backend/java/design-patterns/FactoryPattern' },
+                    { text: '抽象工厂', link: '/backend/java/design-patterns/AbstractFactoryPattern' },
+                    { text: '生成器', link: '/backend/java/design-patterns/BuilderPattern' },
+                    { text: '原型', link: '/backend/java/design-patterns/PrototypePattern' },
+                    { text: '单例', link: '/backend/java/design-patterns/SingletonPattern' }
+                  ]
+                },
+                {
+                  text: '结构型模式',
+                  items: [
+                    { text: '适配器模式', link: '/backend/java/design-patterns/AdapterPattern' },
+                    { text: '桥接模式', link: '/backend/java/design-patterns/BridgePattern' },
+                    { text: '装饰器模式', link: '/backend/java/design-patterns/DecoratorPattern' },
+                    { text: '外观模式', link: '/backend/java/design-patterns/FacadePattern' },
+                    { text: '享元模式', link: '/backend/java/design-patterns/FlyweightPattern' },
+                    { text: '代理模式', link: '/backend/java/design-patterns/ProxyPattern' }
+                  ]
+                },
+                {
+                  text: '行为型模式',
+                  items: [
+                    { text: '责任链模式', link: '/backend/java/design-patterns/ChainOfResponsibilityPattern' },
+                    { text: '命令模式', link: '/backend/java/design-patterns/CommandPattern' },
+                    { text: '解释器模式', link: '/backend/java/design-patterns/InterpreterPattern' },
+                    { text: '迭代器模式', link: '/backend/java/design-patterns/IteratorPattern' },
+                    { text: '中介者模式', link: '/backend/java/design-patterns/MediatorPattern' }
+                  ]
+                },
+              ]
+            },
           ]
         },
         {
           text: '数据库',
           items: [
-            { text: 'Oracle', link: '/java-knowledge' },
-            { text: 'SQLLite', link: '/java-frameworks' },
-            { text: 'PostgreSQL', link: '/api-examples' },
-            { text: 'MySQL', link: '/api-examples' },
+            { text: 'Oracle', link: '/architecture/api-examples' },
+            { text: 'MySQL',
+              items: [
+                {text: 'MySQL常用命令', link: '/backend/database/mysql/MySQL常用命令'  },
+                {text: 'MySQL索引原理及慢查询优化', link: '/backend/database/mysql/MySQL索引原理及慢查询优化'  },
+                {text: 'MySQL 问题排查', link: '/backend/database/mysql/mysql-insights'  },
+              ]
+            },
+            { text: 'PostgreSQL', link: '/backend/database/postgresql' },
+            { text: 'SQL Server', 
+              items: [
+                {text: 'SQL Server 数据备份', link: '/backend/database/mssql/mssql-ops' },
+            ] },
+          ]
+        }
+      ],
+      '/frontend/': [
+        {
+          text: 'Javascript',
+          items: [
+            { text: 'Java知识体系', link: '/java-knowledge' },
+            { text: 'Java框架', link: '/java-frameworks' },
+            { text: '安装ITAS应用', link: '/api-examples' },
           ]
         },
         {
-          text: '开发工具',
+          text: 'Vue.js',
           items: [
-            { text: 'Intellij Idea', link: '/java-knowledge' },
-            { text: 'VS Code', link: '/java-frameworks' },
-            { text: 'Windsurf', link: '/api-examples' },
+            { text: 'Java知识体系', link: '/java-knowledge' },
+            { text: 'Java框架', link: '/java-frameworks' },
+            { text: '安装ITAS应用', link: '/api-examples' },
+          ]
+        },
+        {
+          text: 'React.js',
+          items: [
+            { text: 'Java知识体系', link: '/java-knowledge' },
+            { text: 'Java框架', link: '/java-frameworks' },
+            { text: '安装ITAS应用', link: '/api-examples' },
+          ]
+        },
+      ],
+      '/ops/': [
+        {
+          text: '容器与编排',
+          items: [
+            { text: 'Docker', link: '/ops/docker', 
+              collapsed: true,
+              items: [
+                { text: 'Docker 常用命令', link: '/ops/docker/docker-cli' },
+                { text: 'Docker 核心概念', link: '/ops/docker/docker-concepts' },
+                { text: 'Docker 运维', link: '/ops/docker/docker-ops' },
+                { text: 'Docker 问题排查', link: '/ops/docker/docker-insights' },
+              ]
+            },
+            { text: 'k8s', link: '/ops/docker', 
+              collapsed: true,
+              items: [
+                { text: 'Docker 常用命令', link: '/ops/docker/docker-cli' },
+                { text: 'Docker 核心概念', link: '/ops/docker/docker-concepts' },
+                { text: 'Docker 运维', link: '/ops/docker/docker-ops' },
+                { text: 'Docker 问题排查', link: '/ops/docker/docker-insights' },
+              ]
+            },
+          ]
+        },
+        {
+          text: 'CI/CD',
+          items:[
+             { 
+              text: 'CI/CD', link: '/ops/cicd', 
+              collapsed: true,
+              items: [
+                { text: 'Gitlab CI/CD 实践', link: '/ops/cicd/gitlab-ci' },
+              ]
+            },
+          ]
+        }
+      ],
+      '/tool/': [
+        {
+          text: '常用命令',
+          items: [
+            { text: 'Mac 常用命令', link: '/tool/macos/mac-commands' },
+            { text: 'Linux 常用命令', link: '/tool/linux/linux-commands' },
+            { text: '使用 SSH 配置文件简化连接', link: '/tool/linux/ssh-config' },
+          ]
+        },
+        {
+          text: 'MacOS 开发环境',
+          items: [
+            
+            { text: '打造舒服的 Mac 工作环境', link: '/tool/macos/mac-tips' },
+            { text: 'Homebrew 指南', link: '/devops/gitlab' },
+            { text: 'Mac 配置与提效', link: '/devops/gitee' },
           ]
         },
       ],
       '/projects/': [
-        { text: '部署', items: [{ text: 'Docker', link: '/devops/docker' }] },
         { text: 'CI/CD', items: [{ text: 'GitHub Actions', link: '/devops/github-actions' }] }
       ],
     },
