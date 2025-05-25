@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="utf-8">
+   <title></title>
+   <link href="./static/codemirror.css" rel="stylesheet">
+   <link href="./static/ttcn.css" rel="stylesheet">
+   <script src="./static/codemirror.js"></script>
+   <script src="./static/sql-formatter-2.3.3.js"></script>
+ </head>
+ <body>
+    <div style="border: 1px solid #000">
+      <textarea id="1" style="width:100%;height: 200px"></textarea>
+    </div>
+    <button type="submit" onclick="f(document.getElementById('1'))">转换</button>
+    <div style="border: 1px solid #000">
+      <textarea id="sql" style="width:100%;height: 500px;"></textarea>
+    </div>
+    
+    <script type="text/javascript">
+     function f(obj){
+       var textVa = editorRaw.getValue();
+       // 获取带问号的SQL语句
+       var statementStartIndex = textVa.indexOf('Preparing: ');
+       var statementEndIndex = textVa.length-1;
+       for(var i = statementStartIndex; i < textVa.length; i++) {
+         if(textVa[i] == "\n") {
+          statementEndIndex = i;
+          break;
+         }
+       }
+       var statementStr = textVa.substring(statementStartIndex+"Preparing: ".length, statementEndIndex);
+       console.log(statementStr);
+       //获取参数
+       var parametersStartIndex = textVa.indexOf('Parameters: ');
+       var parametersEndIndex = textVa.length-1;
+       for(var i = parametersStartIndex; i < textVa.length; i++) {
+         if(textVa[i] == "\n") {
+          parametersEndIndex = i;
+          break;
+         } else {
+           console.log(textVa[i]);
+         }
+       }
+       var parametersStr = textVa.substring(parametersStartIndex+"Parameters: ".length, parametersEndIndex);
+       parametersStr = parametersStr.split(",");
+       console.log(parametersStr);
+       for(var i = 0; i < parametersStr.length; i++) {
+         // 如果数据中带括号将使用其他逻辑
+         tempStr = parametersStr[i].substring(0, parametersStr[i].indexOf("("));
+         // 获取括号中内容
+         typeStr = parametersStr[i].substring(parametersStr[i].indexOf("(")+1,parametersStr[i].indexOf(")"));
+         // 如果为字符类型
+         if (typeStr == "String" || typeStr == "Timestamp") {
+           statementStr = statementStr.replace("?", "'"+tempStr.trim()+"'");
+         }else{
+           // 数值类型
+           statementStr = statementStr.replace("?", tempStr.trim());
+         }
+       }
+
+       console.log(statementStr);
+       editorSql.setValue(sqlFormatter.format(statementStr));
+       return textVa;
+     }
+     var editorRaw = CodeMirror.fromTextArea(document.getElementById("1"), {
+          theme:"tomorrow-night-eighties",
+          lineNumbers: true,    
+          styleActiveLine: true,
+          matchBrackets: true 
+        });
+
+     var editorSql = CodeMirror.fromTextArea(document.getElementById("sql"), {
+          theme:"tomorrow-night-eighties",
+          lineNumbers: true,    
+          styleActiveLine: true,
+          matchBrackets: true 
+        });
+    
+    </script>
+ </body>
+ </html>
