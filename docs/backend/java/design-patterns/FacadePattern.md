@@ -15,11 +15,11 @@
 
 ### 类图
 
-<img src="/assets/FacadePattern/image-20200625115947988.png" alt="image-20200625115947988" style="zoom:50%;" />
+<img src="./image-20200625115947988.png" alt="image-20200625115947988" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/FacadePattern/image-20200625120001473.png" alt="image-20200625120001473" style="zoom:50%;" />
+<img src="./image-20200625120001473.png" alt="image-20200625120001473" style="zoom:50%;" />
 
 ## 优点
 

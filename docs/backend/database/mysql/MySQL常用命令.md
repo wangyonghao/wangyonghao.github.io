@@ -17,13 +17,8 @@ create user 'username'@'%' identified by 'password';
 
 ```sql 
 grant select,insert,update,delete,create on `database-name`.* to username;
-
 grant all privileges  on `database-name`.* to username@'%';
-
-
-
 flush  privileges; --使变更立即生效
-
 ```
 
 5、revoke all on *.* from tester;--取消用户所有数据库（表）的所有权限

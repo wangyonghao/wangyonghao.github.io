@@ -4,7 +4,7 @@ MyBatis 是一个 Java 持久层框架，通过XML文件或注解把对象与SQL
 
 MyBatis 框架体系示意图：
 
-![img](assets/SouthEast.png)
+![img](./assets/SouthEast.png)
 
 ## 核心部件
 
@@ -23,10 +23,9 @@ MyBatis 框架体系示意图：
 
 MyBatis的工作原理示意图：
 
-<img src="assets/MyBatisWorkFlow.png" alt="MyBatis工作流程图" style="zoom:50%;" />
+<img src="./assets/MyBatisWorkFlow.png" alt="MyBatis工作流程图" style="zoom:50%;" />
 
 流程解析：
-
 1. 初始化：解析配置文件 mybatis-config.xml，使用这些配置信息创建 Configuration 对象。将Mapper.xml 组装成一个个MappedStatement 对象
 2. 构造会话工厂 SqlSessionFactory：使用 Configuration 对象中的配置信息构建会话工厂SqlSessionFactory。
 3. 创建会话对象 SqlSession：由会话工厂创建SqlSession对象。用来执行SQL，管理事务。
@@ -43,7 +42,7 @@ MyBatis 提供了两种级别的缓存，分别是会话级缓存（ Session Cac
 
 MyBatis 默认开启一级缓存。在同个SqlSession中，查询语句相同的sql会被缓存，但是一旦执行新增或更新或删除操作，缓存就会被清除。
 
-![img](assets/1254583-20171026214546023-1354746770.png)
+![img](./assets/1254583-20171026214546023-1354746770.png)
 
 **一级缓存的底层实现**
 
@@ -73,7 +72,7 @@ MyBatis 使用 SqlSession 对象表示一次数据库的会话，SqlSession 将�
 
 MyBatis的二级缓存是应用级别的缓存，它可以提高对数据库查询的效率，以提高应用的性能。
 
-![img](assets/1254583-20171029185910164-1823278112.png)
+![img](./assets/1254583-20171029185910164-1823278112.png)
 
 SqlSessionFactory 层面上的二级缓存默认是不开启的，二级缓存的开启需要进行配置，实现二级缓存的时候，MyBatis要求返回的POJO必须是可序列化的。 也就是要求实现Serializable接口，配置方法很简单，只需要在映射XML文件配置就可以开启缓存了`<cache/>`，如果我们配置了二级缓存就意味着：
 

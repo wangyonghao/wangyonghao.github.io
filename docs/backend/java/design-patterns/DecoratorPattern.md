@@ -17,11 +17,11 @@
 
 ### 类图
 
-<img src="/assets/DecoratorPattern/image-20200625110051491.png" alt="image-20200625110051491" style="zoom:50%;" />
+<img src="./image-20200625110051491.png" alt="image-20200625110051491" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/DecoratorPattern/image-20200625110137746.png" alt="image-20200625110137746" style="zoom:50%;" />
+<img src="./image-20200625110137746.png" alt="image-20200625110137746" style="zoom:50%;" />
 
 ## 优点
 

@@ -83,7 +83,7 @@ PUT /blogs/_settings
 }
 ```
 
-![img](assets/1680833512574-f54ef2d5-f629-43ef-9695-79da5527358c.png)
+![img](/assets/1680833512574-f54ef2d5-f629-43ef-9695-79da5527358c.png)
 
 
 

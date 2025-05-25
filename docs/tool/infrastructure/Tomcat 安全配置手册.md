@@ -23,36 +23,45 @@ Tomcat 已默认禁止目录遍历
 <servlet>
   <servlet-name>default</servlet-name>
   <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
-  ...
   <init-param>
     <param-name>listings</param-name>
     <param-value>false</param-value>
   </init-param>
-  ...
 </servlet>
 ```
 
-### 4. **删除jspx文件解析**
+### 4. 删除jspx文件解析
 
 Tomcat默认是可以解析jspx文件格式的后缀，解析jspx给服务器带来了极大的安全风险，若不需要使用jspx文件，建议删除对jspx的解析。修改 `conf/web.xml` 文件，将如下代码注释掉：
 
 ```xml
-<url-pattern>*.jspx</url-pattern>
+<!-- <url-pattern>*.jspx</url-pattern> -->
+```
+
+或者直接删除以下配置：
+
+```xml
+  <servlet-mapping>
+    <servlet-name>jsp</servlet-name>
+    <url-pattern>*.jspx</url-pattern>
+  </servlet-mapping>
 ```
 
 ### 5. 自定义错误页面
 
-Tomcat在程序执行失败时会有错误信息提示，可能泄漏服务器的敏感信息，需要关闭错误提示信息。可以通过指定错误页面的方式不将错误信息显示给用户。修改`conf/web.xml`，在<web-app>标签上添加以下内容：
+Tomcat在程序执行失败时会有错误信息提示，可能泄漏服务器的敏感信息，需要关闭错误提示信息。可以通过指定错误页面的方式不将错误信息显示给用户。修改`conf/web.xml`，在`<web-app>`标签上添加以下内容：
 
 ```xml
-<error-page>
-  <error-code>500</error-code>
-  <location>/500.html</location>
-</error-page>
-<error-page> 
-  <exception-type>java.lang.NullPointerException</exception-type>
-  <location>/error.jsp</location> 
-</error-page>
+<web-app>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.html</location>
+  </error-page>
+  <error-page> 
+    <exception-type>java.lang.NullPointerException</exception-type>
+    <location>/error.jsp</location> 
+  </error-page>
+</web-app>
 ```
 
 ### 6. 开启HTTPS
@@ -139,7 +148,7 @@ Web目录权限统一设置为755，web文件权限统一设置为644。只有�
 
 为了限制脚本的访问权限，防范webshell木马，建议启动时增加安全参数`-security`启动: 
 
-```xml
+```shell
 tomcat/bin/startup.sh -security
 ```
 

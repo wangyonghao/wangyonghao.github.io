@@ -21,9 +21,9 @@
 
 ## 结构
 
-<img src="/assets/FlyweightPattern/image-20200626115811570.png" alt="类图" style="zoom:50%;" />
+<img src="./image-20200626115811570.png" alt="类图" style="zoom:50%;" />
 
-<img src="/assets/FlyweightPattern/image-20200626120443432.png" alt="时序图" style="zoom:50%;" />
+<img src="./image-20200626120443432.png" alt="时序图" style="zoom:50%;" />
 
 ## 优点
 

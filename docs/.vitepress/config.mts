@@ -44,9 +44,9 @@ export default defineConfig({
             { text: '安全加固', link: '/architecture/web-security/sql-injection' },
           ]
         },
-        {
-          text:'认证',
-        }
+        // {
+        //   text:'认证',
+        // }
       ],
       '/backend/': [
         {
@@ -119,25 +119,25 @@ export default defineConfig({
         {
           text: 'Javascript',
           items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
+            // { text: 'Java知识体系', link: '/java-knowledge' },
+            // { text: 'Java框架', link: '/java-frameworks' },
+            // { text: '安装ITAS应用', link: '/api-examples' },
           ]
         },
         {
           text: 'Vue.js',
           items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
+            // { text: 'Java知识体系', link: '/java-knowledge' },
+            // { text: 'Java框架', link: '/java-frameworks' },
+            // { text: '安装ITAS应用', link: '/api-examples' },
           ]
         },
         {
           text: 'React.js',
           items: [
-            { text: 'Java知识体系', link: '/java-knowledge' },
-            { text: 'Java框架', link: '/java-frameworks' },
-            { text: '安装ITAS应用', link: '/api-examples' },
+            // { text: 'Java知识体系', link: '/java-knowledge' },
+            // { text: 'Java框架', link: '/java-frameworks' },
+            // { text: '安装ITAS应用', link: '/api-examples' },
           ]
         },
       ],
@@ -154,7 +154,7 @@ export default defineConfig({
                 { text: 'Docker 问题排查', link: '/ops/docker/docker-insights' },
               ]
             },
-            { text: 'k8s', link: '/ops/docker', 
+            { text: 'k8s', link: '/ops/k8s',  // Corrected link
               collapsed: true,
               items: [
                 { text: 'Docker 常用命令', link: '/ops/docker/docker-cli' },
@@ -192,8 +192,8 @@ export default defineConfig({
           items: [
             
             { text: '打造舒服的 Mac 工作环境', link: '/tool/macos/mac-tips' },
-            { text: 'Homebrew 指南', link: '/devops/gitlab' },
-            { text: 'Mac 配置与提效', link: '/devops/gitee' },
+            { text: 'Homebrew 指南', link: '/tool/macos/homebrew-guide' }, // Corrected link
+            { text: 'Mac 配置与提效', link: '/tool/macos/mac-config' }, // Corrected link
           ]
         },
       ],

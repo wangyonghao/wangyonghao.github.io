@@ -24,7 +24,7 @@
 
 ## 实现
 
-<img src="/assets/FactoryPattern/image-20200608095144737.png" alt="工厂模式类图" style="zoom:50%;" />
+<img src="./image-20200608095144737.png" alt="工厂模式类图" style="zoom:50%;" />
 
 
 

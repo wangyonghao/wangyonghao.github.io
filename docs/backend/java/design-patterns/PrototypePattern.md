@@ -10,11 +10,11 @@
 
 ### 类图
 
-<img src="/assets/PrototypePattern/image-20200618163327673.png" alt="image-20200618163327673" style="zoom:50%;" />
+<img src="./image-20200618163327673.png" alt="image-20200618163327673" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/PrototypePattern/image-20200618163540101.png" alt="image-20200618163540101" style="zoom:50%;" />
+<img src="./image-20200618163540101.png" alt="image-20200618163540101" style="zoom:50%;" />
 
 ### 角色
 

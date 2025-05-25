@@ -8,11 +8,11 @@
 
 ### 类图
 
-<img src="/assets/InterpreterPattern/image-20200718155408165.png" alt="image-20200718155408165" style="zoom:50%;" />
+<img src="./image-20200718155408165.png" alt="image-20200718155408165" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/InterpreterPattern/image-20200718155505262.png" alt="image-20200718155505262" style="zoom:50%;" />
+<img src="./image-20200718155505262.png" alt="image-20200718155505262" style="zoom:50%;" />
 
 ### 角色
 

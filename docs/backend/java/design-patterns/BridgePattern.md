@@ -21,11 +21,11 @@
 
 ### 类图
 
-<img src="/assets/BridgePattern/image-20200625090025093.png" alt="image-20200625090025093" style="zoom:50%;" />
+<img src="./image-20200625090025093.png" alt="image-20200625090025093" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/BridgePattern/image-20200625090043172.png" alt="image-20200625090043172" style="zoom:50%;" />
+<img src="./image-20200625090043172.png" alt="image-20200625090043172" style="zoom:50%;" />
 
 ## 优点
 

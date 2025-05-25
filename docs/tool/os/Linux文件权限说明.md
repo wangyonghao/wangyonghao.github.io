@@ -23,7 +23,7 @@ drwxr-xr-x 3 user user 4.0K  4月 12 13:57 Videos
 
 **权限组成说明**
 
-<img src="assets/file-permissions-in-linux.png" alt="img" style="zoom:50%;" />
+<img src="./assets/file-permissions-in-linux.png" alt="img" style="zoom:50%;" />
 
 以drwxr-xr-x为例进行说明，一共有十位数。
 

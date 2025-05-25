@@ -14,11 +14,11 @@
 
 ### 类图
 
-<img src="/assets/CommandPattern/image-20200701155613382.png" alt="image-20200701155613382" style="zoom:50%;" />
+<img src="./image-20200701155613382.png" alt="image-20200701155613382" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/CommandPattern/image-20200701155939072.png" alt="image-20200701155939072" style="zoom:50%;" />
+<img src="./image-20200701155939072.png" alt="image-20200701155939072" style="zoom:50%;" />
 
 ### 角色
 

@@ -36,7 +36,7 @@ pnpm docs:dev
 ```bash
 pnpm docs:build
 # 或者 npm run docs:build
-# 或者yarn docs:build
+# 或者 yarn docs:build
 ```
 
 ### 预览构建后的站点

@@ -16,9 +16,9 @@
 
 ## 结构
 
-<img src="/assets/ProxyPattern/image-20200630104444635.png" alt="image-20200630104444635" style="zoom:50%;" />
+<img src="./image-20200630104444635.png" alt="image-20200630104444635" style="zoom:50%;" />
 
-<img src="/assets/ProxyPattern/image-20200630101352534.png" alt="SequenceDiagram" style="zoom:50%;" />
+<img src="./image-20200630101352534.png" alt="SequenceDiagram" style="zoom:50%;" />
 
 ## 优点
 

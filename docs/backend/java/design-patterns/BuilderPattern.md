@@ -16,11 +16,11 @@
 
 ### 类图
 
-<img src="/assets/BuilderPattern/image-20200618110902527.png" alt="image-20200618110902527" style="zoom:50%;" />
+<img src="./image-20200618110902527.png" alt="image-20200618110902527" style="zoom:50%;" />
 
 ### 时序图
 
-<img src="/assets/BuilderPattern/image-20200618111304832.png" alt="image-20200618111304832" style="zoom:50%;" />
+<img src="./image-20200618111304832.png" alt="image-20200618111304832" style="zoom:50%;" />
 
 ### 角色
 
