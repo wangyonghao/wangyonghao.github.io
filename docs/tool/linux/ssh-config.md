@@ -16,8 +16,10 @@ SSH配置文件在以下场景中非常有用：
 
 ## 配置示例
 以下是一些常见的配置示例。
-### 示例 1: 基本配置
+<details>
+  <summary>示例 1: 基本配置</summary>
 此示例为一台服务器设置了别名`vps`，使用`root`用户，通过`2022`端口连接到`example.com` 服务器。
+
 ```bash
 Host vps
     HostName example.com        # 实际服务器的域名或 IP 地址
@@ -25,16 +27,20 @@ Host vps
     Port 2022                   # SSH 端口 2022，默认为 22
     IdentityFile ~/.ssh/id_rsa  # 指定私钥文件的路径
 ```
-### 示例 2: 通过跳板机连接内网服务器
-首先，定义跳板机的配置：
-```bash
+</details>
 
+<details>
+  <summary>示例 2: 通过跳板机连接内网服务器</summary>
+首先，定义跳板机的配置：
+
+```bash
 Host jump_host
     HostName jump.mycompany.com
     User jump_user
     Port 22
 ```
 然后，定义内网服务器，并指定通过`jump-server`进行连接：
+
 ```bash
 Host internal_server
     HostName 10.0.0.5             # 内网 IP 地址
@@ -43,9 +49,13 @@ Host internal_server
     ProxyJump jump_host           # 指定通过 jump_host 连接
 ```
 使用 ProxyJump 后，SSH 客户端会自动处理通过跳板机的连接，对用户透明。
+</details>
 
-### 示例 3: 多台服务器共享部分配置
+
+<details>
+  <summary>示例 3: 多台服务器共享部分配置</summary>
 你可以为一组使用相同用户和私钥，但主机名不同的服务器共享部分配置。
+
 ```bash
 Host dev_server prod_server
     User deploy_user
@@ -57,9 +67,12 @@ Host dev_server
 Host prod_server
     HostName 192.168.1.102
 ```
+</details>
 
-### 示例 4: 全局配置与连接优化
+<details>
+  <summary>示例 4: 全局配置与连接优化</summary>
 使用通配符 * 可以为所有未明确匹配其他 Host 定义的连接设置默认参数。
+
 ```bash
 Host *
     # 指定 SSH 尝试多个私钥进行认证
@@ -74,8 +87,12 @@ Host *
     # 如果服务器连续 3 次未响应空包，则断开连接
     ServerAliveCountMax 3
 ```
-### 示例 5: 禁用严格主机密钥检查（不推荐，仅用于测试或已知受信任的场景)
+</details> 
+
+<details>
+  <summary>示例 5: 禁用严格主机密钥检查（不推荐，仅用于测试或已知受信任的场景)</summary>
 警告： 以下配置会降低安全性，容易受到中间人攻击 (Man-in-the-Middle Attack)，仅在完全了解风险的受控测试环境中使用。
+
 ```bash
 Host temporary-test-server
     HostName test.example.org
@@ -83,7 +100,9 @@ Host temporary-test-server
     StrictHostKeyChecking no     # 禁用严格的主机密钥检查
     UserKnownHostsFile /dev/null # 不将新主机的密钥添加到 known_hosts 
 ```
-## 重要的配置项说明
+</details>
+
+## 重要配置项说明
 以下是一些关键的 SSH 配置指令及其解释：
 - `Host <别名>`: 定义一个连接配置块的开始，并为其指定一个易于记忆的别名。你可以使用 `ssh <别名>` 来发起连接。
 - `User <用户名>`: 指定登录目标服务器时使用的用户名。
@@ -97,4 +116,5 @@ Host temporary-test-server
 - **AddKeysToAgent yes**：将密钥加载到内存中的 ssh-agent，避免每次连接都输入密码。
 - **UseKeychain yes**：(macOS 独有)负责让 SSH 客户端从 macOS 钥匙串中自动获取密钥的密码，避免了首次加载密钥到 ssh-agent 时手动输入密码的麻烦。 
   - **ssh-agent**：是一个在后台运行的程序，它会存储你的解密后的 SSH 私钥。一旦私钥被添加到 ssh-agent，你就不需要每次使用该私钥进行 SSH 连接时都输入密码（passphrase）了。它会一直存储在内存中，直到 ssh-agent 被终止或者你手动从其中删除密钥。
+
 

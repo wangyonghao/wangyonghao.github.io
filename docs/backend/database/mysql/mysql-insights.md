@@ -10,7 +10,7 @@ https://www.cnblogs.com/wbxk/p/10785517.html
 
 (1) ：修改数据库配置
 
-```		mysql
+```sql
 
 [client]
 default-character-set = utf8mb4
