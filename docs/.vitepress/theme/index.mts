@@ -62,8 +62,8 @@ export default {
     const { frontmatter } = useData();
     const route = useRoute();
     const initZoom = () => {
-      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
-      mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+      // 增加选择器 :not(.m-nav-layout img) ，禁用导航页图标的缩放功能
+      mediumZoom('.main img:not(.m-nav-layout img)', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
     };
     onMounted(() => {
       initZoom();
