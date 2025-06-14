@@ -6,12 +6,11 @@ import { generateSidebar } from 'vitepress-sidebar';
 // 插件：Mermaid流程图
 import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid';
 
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
   title: "WYH的知识库",
-  description: "全栈 + 偏后端 + 懂运维 + 有系统性思维",
+  description: "一个全栈开发者的技术笔记，懂前端 + 偏后端 + 会运维 + 有系统性思维",
   lastUpdated: true,
   cleanUrls: true,
   markdown: {
@@ -22,7 +21,7 @@ export default defineConfig({
       light: 'vitesse-light',
       dark:'vitesse-dark'
     },
-    //行号显示
+    // 行号显示
     lineNumbers: true,
     // 开启图片懒加载
     image: {
@@ -69,17 +68,45 @@ export default defineConfig({
       text: '编辑本页'
     },
     footer:{
-      message: '总访问量<span id="busuanzi_value_site_pv"/>次,总访问人数 <span id="busuanzi_value_site_uv" /> 人次',
+      message: '总访问量<span id="busuanzi_value_site_pv"/>次<br/>总访问人数 <span id="busuanzi_value_site_uv" /> 人次',
       copyright: `Copyright © 2024-${new Date().getFullYear()}  WYH`
     },
     nav: [
-      { text: '站点', link: '/nav/' },
-      { text: '架构师视角', link: '/architecture/' },
-      { text: '后端', link: '/backend/' },
-      { text: '前端', link: '/frontend/' },
-      { text: 'DevOps', link: '/ops/' },
-      { text: '项目管理', link: '/projects/' },
-      { text: '工具箱', link: '/tool/' },
+      {
+        text: '方法论',
+        items: [
+          { text: '软件架构', link: '/architecture/' },
+          { text: '开发理论', link: '/ops/' },
+          { text: '网络安全', link: '/ops/' },
+          { text: '开源协议', link: '/ops/' },
+          { text: '分布式相关', link: '/ops/' },
+          { text: '开发流程', link: '/ops/' },
+          { text: '开发规范', link: '/projects/' },
+          { text: '设计模式', link: '/projects/' },
+          { text: '项目管理', link: '/projects/' },
+        ]
+      },
+      {
+        text: '技术栈',
+        items: [
+          { text: '前端', link: '/frontend/' },
+          { text: '后端', link: '/backend/' },
+          { text: '算法', link: '/backend/' },
+        ]
+      },
+
+      { text: '工具链',
+        items: [
+          { text: '开发工具', link: '/tool/' },
+          { text: '基础设施', link: '/projects/' },
+          { text: '中间件', link: '/ops/' },
+          { text: '开发资源', link: '/ops/' },
+        ]
+      },
+      { text: '实战', link: '/backend/' },
+      { text: '日常笔记', link: '/notes/' },
+      { text: '导航', link: '/nav/' },
+      { text: '关于我', link: '/me/' },
     ],
     sidebar: generateSidebar([
       {

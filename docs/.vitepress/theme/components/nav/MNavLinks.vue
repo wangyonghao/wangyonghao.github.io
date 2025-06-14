@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { slugify } from '@mdit-vue/shared'
 import MNavLink from './MNavLink.vue'
 import type { NavLink } from './types'
 
@@ -12,21 +13,6 @@ const props = defineProps<{
 const formatTitle = computed(() => {
   return slugify(props.title)
 })
-
-/**
- * 将给定的字符串转换为一个唯一的标识符（slug），用于在 URL 中标识页面或资源。
- */
-function slugify(text: string): string {
-  return text
-    .toString()
-    .normalize('NFD') // 分解 unicode 字符，如 `é` -> `e´`
-    .replace(/[\u0300-\u036f]/g, '') // 移除组合标记（如重音符号）
-    .toLowerCase() // 转换为小写
-    .trim() // 移除首尾空白
-    .replace(/\s+/g, '-') // 将空格替换为连字符
-    .replace(/[^\w-]+/g, '') // 移除所有非单词字符（字母、数字、下划线）和非连字符
-    .replace(/--+/g, '-') // 替换多个连字符为单个连字符
-}
 
 </script>
 

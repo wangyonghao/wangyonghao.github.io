@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: ""
-  text: "知其然，知其所以然"
-  tagline: 后端、前端、数据库、运维、算法
+  name: "WYH的知识库"
+  text: "一个全栈开发者的笔记"
+  tagline: 懂后端、会前端、能运维、有系统性思维
   actions:
     - theme: brand
       text: 开始阅读
