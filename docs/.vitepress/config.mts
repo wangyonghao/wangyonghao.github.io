@@ -6,6 +6,9 @@ import { generateSidebar } from 'vitepress-sidebar';
 // 插件：Mermaid流程图
 import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid';
 
+// 插件：PlantUML 图表
+import markdownItTextualUml from "markdown-it-textual-uml"
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
@@ -16,6 +19,9 @@ export default defineConfig({
   markdown: {
     config(md){
       md.use(MermaidMarkdown)
+
+      // 添加Markdown扩展插件markdown-it-textual-uml，使其支持plantuml
+      md.use(markdownItTextualUml);
     },
     theme: {
       light: 'vitesse-light',
@@ -76,14 +82,14 @@ export default defineConfig({
         text: '方法论',
         items: [
           { text: '软件架构', link: '/architecture/' },
-          { text: '开发理论', link: '/ops/' },
-          { text: '网络安全', link: '/ops/' },
-          { text: '开源协议', link: '/ops/' },
-          { text: '分布式相关', link: '/ops/' },
-          { text: '开发流程', link: '/ops/' },
-          { text: '开发规范', link: '/projects/' },
-          { text: '设计模式', link: '/projects/' },
-          { text: '项目管理', link: '/projects/' },
+          // { text: '开发理论', link: '/ops/' },
+          // { text: '网络安全', link: '/ops/' },
+          // { text: '开源协议', link: '/ops/' },
+          // { text: '分布式相关', link: '/ops/' },
+          // { text: '开发流程', link: '/ops/' },
+          // { text: '开发规范', link: '/projects/' },
+          // { text: '设计模式', link: '/projects/' },
+          // { text: '项目管理', link: '/projects/' },
         ]
       },
       {

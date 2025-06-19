@@ -1,9 +1,6 @@
-# acme.sh 申请SSL证书，并设置自动续期
+# 免费申请 SSL 证书，自动续期
 
-
-
-
-
+ acme.sh 
 ### Install in China
 
 如果你的安装服务器位于中国大陆境内, 访问 github 可能会不成功. 所以安装可能会失败.

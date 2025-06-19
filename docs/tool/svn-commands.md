@@ -1,12 +1,6 @@
-
-
-
-
 ## 命令篇
 
 官方资料：http://svnbook.red-bean.com/zh/1.8/svn.ref.svn.html
-
-
 
 ### 代码检出 checkout
 

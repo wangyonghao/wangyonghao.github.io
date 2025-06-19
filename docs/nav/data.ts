@@ -1,4 +1,4 @@
-import type { NavData } from './components/nav/types'
+import type { NavData } from '../.vitepress/theme/components/nav/types'
 export const NAV_DATA: NavData[] = [
     {
         title: '常用工具',

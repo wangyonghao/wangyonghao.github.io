@@ -111,7 +111,7 @@ Version:
 
 Podman 程序占用存储 56.7MB
 
-```
+```bash
 brew info podman                                
 ==> podman: stable 4.8.2 (bottled), HEAD
 Tool for managing OCI containers and pods
@@ -124,7 +124,7 @@ License: Apache-2.0 and GPL-3.0-or-later
 
 Podman 虚拟机占用存储 3.7G
 
-```
+```bash
 $ ls -lh /Users/war/.local/share/containers/podman/machine/qemu
 total 7814176
 drwxr-xr-x  3 war  staff    96B Jul 22 09:34 cache
@@ -135,7 +135,7 @@ srw-------  1 war  staff     0B Jul 24 10:56 podman.sock
 
 Podman 有两个主要进程
 
-```
+```bash
 $ ps -ef | grep podman
 501 86506     1   0 10:56AM ttys003    0:21.43 /opt/homebrew/Cellar/podman/4.8.2/libexec/podman/gvproxy -mtu 1500 -ssh-port 55372 -listen-qemu unix:///var/folders/jf/51xzjfcn6zqg446gxgw32mkh0000gn/T/podman/qmp_podman-machine-default.sock -forward-sock /Users/war/.local/share/containers/podman/machine/qemu/podman.sock -forward-dest /run/user/501/podman/podman.sock -forward-user core -forward-identity /Users/war/.ssh/podman-machine-default -pid-file /var/folders/jf/51xzjfcn6zqg446gxgw32mkh0000gn/T/podman/podman-machine-default_proxy.pid
   501 86507     1   0 10:56AM ttys003   10:57.55 /opt/homebrew/bin/qemu-system-aarch64 -accel hvf -accel tcg -cpu host -M virt,highmem=on -drive file=/opt/homebrew/share/qemu/edk2-aarch64-code.fd,if=pflash,format=raw,readonly=on -drive file=/Users/war/.local/share/containers/podman/machine/qemu/podman-machine-default_ovmf_vars.fd,if=pflash,format=raw -m 2048 -smp 4 -fw_cfg name=opt/com.coreos/config,file=/Users/war/.config/containers/podman/machine/qemu/podman-machine-default.ign -qmp unix:/var/folders/jf/51xzjfcn6zqg446gxgw32mkh0000gn/T/podman/qmp_podman-machine-default.sock,server=on,wait=off -netdev socket,id=vlan,fd=3 -device virtio-net-pci,netdev=vlan,mac=5a:94:ef:e4:0c:ee -device virtio-serial -chardev socket,path=/var/folders/jf/51xzjfcn6zqg446gxgw32mkh0000gn/T/podman/podman-machine-default_ready.sock,server=on,wait=off,id=apodman-machine-default_ready -device virtserialport,chardev=apodman-machine-default_ready,name=org.fedoraproject.port.0 -pidfile /var/folders/jf/51xzjfcn6zqg446gxgw32mkh0000gn/T/podman/podman-machine-default_vm.pid -virtfs local,path=/Users,mount_tag=vol0,security_model=none -virtfs local,path=/private,mount_tag=vol1,security_model=none -virtfs local,path=/var/folders,mount_tag=vol2,security_model=none -drive if=virtio,file=/Users/war/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-40.20240709.2.0-qemu.aarch64.qcow2 -display none
@@ -143,7 +143,7 @@ $ ps -ef | grep podman
 
 Podman 进程占用内存27M，CPU占用可忽略不计
 
-```
+```bash
 $ top -pid 86506 -stats pid,command,time,cpu,threads,ports,mem,purg
 
 PID       COMMAND         TIME        %CPU    #TH     #PORTS  MEM     PURG
@@ -152,17 +152,15 @@ PID       COMMAND         TIME        %CPU    #TH     #PORTS  MEM     PURG
 
 Podman 虚拟机进程占用内在3.9G，CPU占用
 
-```
+```bash
 $ top -pid 86507 -stats pid,command,time,cpu,threads,ports,mem,purg
 PID       COMMAND             TIME        %CPU    #TH     #PORTS  MEM      PURG
 86507     qemu-system-aarc    11:15.95    0.4     8       33      3917M    0B
 ```
 
-
-
 ### 完整卸载podman
 
-```
+```bash
 podman machine stop
 podman machine rm
 brew uninstall podman
