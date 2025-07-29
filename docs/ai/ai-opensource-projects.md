@@ -28,7 +28,7 @@ MYSQL_PORT=3306
 MYSQL_USER=gemini
 MYSQL_PASSWORD=gemini
 MYSQL_DATABASE=gemini-balance-db
-API_KEYS=["AIzaSyCqK5HzG3XQxZrOHEKI-5S6FEqjBMT7bMc","AIzaSyAJUbtsndSNdmpBDiDYUH4NmJWnVDfuRSM"]
+API_KEYS=["********","********"]
 ALLOWED_TOKENS=["wyh-oci-gemini-balance"]
 ```
 
