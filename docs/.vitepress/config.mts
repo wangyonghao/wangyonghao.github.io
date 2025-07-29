@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { nav, sidebar} from './config/nav'
+import { navbar, sidebar} from './config/navbar'
 import markdown from './config/markdown'
 import vite from './config/vite'
 
@@ -14,7 +14,7 @@ export default defineConfig({
   vite,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav,
+    nav: navbar,
     sidebar,
     // 启用模糊全文搜索
     search: {
@@ -34,21 +34,32 @@ export default defineConfig({
         timeStyle: 'short' // 可选值full、long、medium、short
       },
     },
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇'
-    },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/wangyonghao' },
+    ],
     //编辑本页
     editLink: {
       pattern: 'https://github.com/wangyonghao/wangyonghao.github.io/edit/main/docs/:path', // 改成自己的仓库
       text: '编辑本页'
     },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     footer:{
       message: '总访问量<span id="busuanzi_value_site_pv"/>次<br/>总访问人数 <span id="busuanzi_value_site_uv" /> 人次',
       copyright: `Copyright © 2024-${new Date().getFullYear()}  WYH`
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/wangyonghao' },
-    ],
+    // 自定义扩展: 文章元数据配置
+    // @ts-ignore
+    articleMetadataConfig: {
+      author: 'wyh', // 文章全局默认作者名称
+      authorLink: 'https://wangyonghao.github.io', // 点击作者名时默认跳转的链接
+    },
+    // 自定义扩展: 文章版权配置
+    copyrightConfig: {
+      license: '署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)',
+      licenseLink: 'http://creativecommons.org/licenses/by-sa/4.0/'
+    },
   }
 })

@@ -2,18 +2,24 @@ import DefaultTheme from 'vitepress/theme'
 import { onMounted, watch, nextTick,h } from 'vue'
 import { inBrowser,useData, useRoute } from 'vitepress'
 
-// 自定义组件： 站点导航
-import MNavLinks from './components/nav/MNavLinks.vue'
-
-// GiscusTalk插件
+// 插件：文章评论
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
-// 图片缩放
+// 插件：图片缩放
 import mediumZoom from 'medium-zoom';
-// 进度条
+// 插件：进度条
 import { NProgress } from 'nprogress-v2/dist/index.js'
 import 'nprogress-v2/dist/index.css'
-// 访问量计数，文档 http://busuanzi.ibruce.info/
+// 插件：访问量计数，文档 http://busuanzi.ibruce.info/
 import busuanzi from 'busuanzi.pure.js'
+// 自定义样式导入已移除
+
+// 自定义组件
+import MNavLinks from './components/nav/MNavLinks.vue'
+import Tag from './components/Tag.vue'
+import ArticleMetadata from './components/ArticleMetadata.vue';
+import Archive from './components/Archive.vue';
+import ArticleList from './components/ArticleList.vue';
+
 // 自定义样式
 import './style/index.css'
 
@@ -22,6 +28,7 @@ let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
+
   Layout: ()=>{
     const props: Record<string, any> = {}
     // 获取 frontmatter
@@ -32,11 +39,20 @@ export default {
       props.class = frontmatter.value.layoutClass
     }
 
+    /* 自定义布局 */
+    if(frontmatter.value?.layout === 'article-list'){
+      return h(ArticleList, props)
+    }
+
     return h(DefaultTheme.Layout, props)
   },
   enhanceApp({app , router }) {
     // 注册组件
-    app.component('MNavLinks' , MNavLinks)
+    app.component('MNavLinks' , MNavLinks) // 站点导航
+    app.component('Tag', Tag) // 标签页
+    app.component('ArticleMetadata', ArticleMetadata); // 文章元数据
+    app.component('Archive', Archive); // 归档页
+    app.component('ArticleList', ArticleList); // 文章列表页
 
     if (inBrowser) {
       NProgress.configure({ showSpinner: false })
@@ -89,8 +105,7 @@ export default {
       {
         frontmatter, route
       },
-      //默认值为true，表示已启用，此参数可以忽略；
-      //如果为false，则表示未启用
+      //默认值为true，表示已启用；false表示未启用
       //您可以使用“comment:true”序言在页面上单独启用它
       true
     );

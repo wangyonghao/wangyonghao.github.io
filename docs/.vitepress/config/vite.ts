@@ -10,4 +10,5 @@ export default <UserConfig>{
   ssr: {
     noExternal: ['mermaid'],
   },
+  // PostCSS 配置已移除
 }

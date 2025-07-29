@@ -1,0 +1,16 @@
+Oracle、MySQL、PostgreSQL数据库内置的数据类型对比
+
+| 数据类型分类       | Oracle 类型                                               | MySQL 类型                                      | PostgreSQL 类型                                        | 说明                                                    |
+| ------------------ | --------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------- |
+| **整数**           | `NUMBER(p,0)`                                             | `TINYINT`, `SMALLINT`, `INT`, `BIGINT`          | `SMALLINT`, `INTEGER`, `BIGINT`                        | 所有系统均支持不同大小的整数                            |
+| **小数/浮点数**    | `NUMBER(p,s)`, `FLOAT`, `BINARY_FLOAT`                    | `DECIMAL`, `NUMERIC`, `FLOAT`, `DOUBLE`         | `NUMERIC`, `DECIMAL`, `REAL`, `DOUBLE PRECISION`       | 精度和行为略有差异，PostgreSQL 类型更贴近标准           |
+| **字符串（定长）** | `CHAR(n)`                                                 | `CHAR(n)`                                       | `CHAR(n)`                                              | 通用支持，Oracle 的 CHAR 默认填充空格                   |
+| **字符串（变长）** | `VARCHAR2(n)`                                             | `VARCHAR(n)`, `TEXT`                            | `VARCHAR(n)`, `TEXT`                                   | Oracle 用 `VARCHAR2`，MySQL/PostgreSQL 支持 `TEXT` 类型 |
+| **长文本**         | `CLOB`                                                    | `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`    | `TEXT`                                                 | Oracle 用 LOB，MySQL 和 PG 有不同 TEXT 长度             |
+| **日期/时间**      | `DATE`, `TIMESTAMP`, `TIMESTAMP WITH TIME ZONE`           | `DATE`, `DATETIME`, `TIMESTAMP`, `TIME`, `YEAR` | `DATE`, `TIME`, `TIMESTAMP`, `TIMESTAMPTZ`, `INTERVAL` | PostgreSQL 日期类型最丰富                               |
+| **布尔值**         | 无（通常用 `NUMBER(1)` 或 `CHAR(1)`）                     | `BOOLEAN`（实际为 `TINYINT(1)`）                | `BOOLEAN`                                              | 仅 PostgreSQL 为原生布尔类型                            |
+| **二进制**         | `BLOB`, `RAW(n)`, `LONG RAW`                              | `BINARY`, `VARBINARY`, `BLOB`                   | `BYTEA`                                                | Oracle 用 LOB 类型，PostgreSQL 用 BYTEA                 |
+| **UUID**           | 无原生支持（可用 RAW(16)）                                | 无原生支持（插件或 CHAR(36)）                   | `UUID`                                                 | PostgreSQL 支持原生 UUID                                |
+| **JSON**           | Oracle 21c 起有 `JSON` 类型（21c 之前使用 `CLOB` + 检查） | `JSON`, `JSONB`（MySQL 8.0+）                   | `JSON`, `JSONB`                                        | PostgreSQL `JSONB` 支持最强                             |
+| **枚举**           | 无原生支持（可用 CHECK 约束）                             | `ENUM`                                          | 无原生支持（推荐用 `CHECK` 或关联表）                  | MySQL 独有 `ENUM` 类型                                  |
+| **XML**            | `XMLTYPE`                                                 | 不原生支持                                      | `XML`                                                  | Oracle 和 PostgreSQL 支持原生 XML 类型                  |
