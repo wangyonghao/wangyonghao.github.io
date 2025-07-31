@@ -1,4 +1,10 @@
-# Mysql的坑
+---
+title: MySQL踩坑
+date: 2025-05-25 20:15
+tags: [MySQL]
+description: MySQL 数据库的一些坑
+---
+# MySQL的坑
 
 ### 永远不要在 MySQL 中使用 UTF-8
 

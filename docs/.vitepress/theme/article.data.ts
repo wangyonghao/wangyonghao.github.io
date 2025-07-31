@@ -6,14 +6,14 @@ import 'dayjs/locale/zh-cn';
 
 // 定义文章数据接口
 interface ArticleData {
+  isOriginal: boolean;
+  author: string;
+  authorLink: string;
   title?: string;
   url: string;
   tags?: string[];
   description?: string;
-  date?: string;
-  
-  
-  
+  date: string;
   [key: string]: any; // 允许其他 frontmatter 属性
 }
 
@@ -42,9 +42,10 @@ export default {
     articleFiles.forEach(articleFile => {
       const articleContent = fs.readFileSync(articleFile, 'utf-8');
       const {data} = matter(articleContent,{excerpt:true});
-
+    
       // 构建文章数据对象
       articles.push({
+        isOriginal: data.isOriginal ?? true,
         title: data.title || path.basename(articleFile).replace(/\.md$/, ''),
         // 提取文章路径，移除 /docs/ 前缀和 .md 后缀
         url: articleFile.substring(articleFile.lastIndexOf('/docs/') + 6).replace(/\.md$/, ''),
@@ -54,7 +55,8 @@ export default {
       } as ArticleData);
     });
 
+    articles.sort((a, b) => b.date.localeCompare(a.date));
     // 按文章发布时间倒序
-    return articles.sort((a, b) => b.date?.localeCompare(a.date) || 0)
+    return articles;
   }
 };

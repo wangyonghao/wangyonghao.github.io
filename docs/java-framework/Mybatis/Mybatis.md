@@ -1,3 +1,7 @@
+---
+title: MyBatis
+date: 2025-05-25 22:29
+---
 # MyBatis
 
 MyBatis 是一个 Java 持久层框架，通过XML文件或注解把对象与SQL语句关联起来，内部封装了JDBC操作数据库的过程。	

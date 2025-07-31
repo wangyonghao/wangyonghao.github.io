@@ -1,3 +1,8 @@
+---
+title: SVN 常用命令
+date: 2025-06-19 11:26
+---
+
 ## 命令篇
 
 官方资料：http://svnbook.red-bean.com/zh/1.8/svn.ref.svn.html
@@ -48,7 +53,8 @@ svn add *.php
 ### 删除文件 delete
 
 ```
-svn delete /path/to/file-or-dir # 删除版本控制，但是本地依旧保留文件 svn delete /path/to/file-or-dir --keep-local
+svn delete /path/to/file-or-dir 
+svn delete /path/to/file-or-dir --keep-local # 删除版本控制，但是本地依旧保留文件 
 ```
 
 ### 查看日志 log

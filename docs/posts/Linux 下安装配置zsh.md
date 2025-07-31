@@ -1,3 +1,8 @@
+---
+title: Linux 下安装Zsh
+tags: [Tomcat]
+date: 2024-07-21 09:36
+---
 ## 1. 概述
 
 本文章介绍了在Linux系统下安装 zsh 及配置过程。

@@ -1,4 +1,4 @@
-### 集成Activiti 的坑
+# Druid 踩坑记录
 
 Oracle 数据库 开启多用户
 
@@ -49,8 +49,6 @@ org.activiti.engine.ActivitiException: Could not set database schema on connecti
 
 报错代码`org.activiti.engine.impl.db.DbSqlSessionFactory`:
 
-
-
 ```java
 package org.activiti.engine.impl.db;
 
@@ -69,11 +67,7 @@ public class DbSqlSessionFactory implements SessionFactory {
 }
 ```
 
-
-
 Druid 连接池：
-
-
 
 ```java
 package com.alibaba.druid.pool;
@@ -95,14 +89,8 @@ public class DruidPooledConnection extends PoolableWrapper implements javax.sql.
 }
 ```
 
-
-
 GitHub仓库 Issue
 
-
-
 [还有多少 Bug 是由于 SQLFeatureNotSupportedException 异常引起的](https://github.com/alibaba/druid/issues/3718)
-
-
 
 Druid开发者的回复： setSchema不支持不是BUG，故意这样设计的。

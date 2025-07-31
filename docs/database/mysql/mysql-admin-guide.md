@@ -1,13 +1,14 @@
-# MySQL管理员手册
+---
+title: 安装与配置 MySQL
+date: 2025-07-29 20:15
+tags: [数据库]
+description: 安装与配置 MySQL 数据库
+---
+# 安装与配置 MySQL
 
-## 快速安装 MySQL
+## Docker 安装 MySQL
 
 ::: code-group
-
-```bash [bash]
-apt install mysql
-```
-
 ```bash [docker-run]
 mkdir -p /opt/mysql8/conf
 
@@ -50,7 +51,7 @@ services:
 
 ### 创建数据库并分配一个管理员
 
-````mysql
+```sql
 create database `mydb` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 create user 'myuser'@'%' identified by 'mypassword';
 grant all privileges  on `mydb`.* to myuser@'%';
@@ -61,7 +62,7 @@ flush privileges;
 
 MySQL的 `utf8` 字符集是跛脚的UTF-8，它实际上只能存储3个字节的UTF-8字符。 `utf8mb4` 是MySQL提供的完整UTF-8支持，它能够正确存储和处理所有UTF-8编码的字符，包括那些需要4个字节的Emoji表情和罕见汉字。
 
-```mysql
+```sql
 -- 在MySQL客户端连接后执行此命令
 SHOW VARIABLES LIKE 'character_set_client';
 SHOW VARIABLES LIKE 'character_set_connection';

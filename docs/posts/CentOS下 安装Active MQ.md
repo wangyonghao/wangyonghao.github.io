@@ -1,7 +1,10 @@
+---
+title: CentOS 下安装 ActiveMQ
+tags: [ActiveMQ]
+date: 2024-01-31 22:43
+---
 ### 1. 概述
-
 本文介绍了在 Linux 服务器安装配置 ActiveMQ 的过程。
-
 ActiveMQ 用来提供消息服务，主要用于异步处理，应用解耦，流量削锋和消息通讯等场景。
 
 ### 2. 环境准备：

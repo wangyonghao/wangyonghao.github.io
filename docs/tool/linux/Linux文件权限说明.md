@@ -13,9 +13,7 @@ drwxr-xr-x 2 user user 4.0K  4月 16 18:52 Downloads
 drwxr-xr-x 2 user user 4.0K  4月 11 23:24 Music
 drwxr-xr-x 2 user user 4.0K  4月 11 23:24 Pictures
 drwxr-xr-x 2 user user 4.0K  4月 11 23:24 Public
-drwx------ 5 user user 4.0K  4月 12 11:28 snap
 drwxr-xr-x 2 user user 4.0K  4月 11 23:24 Templates
-drwx------ 1 user user    0  5月 10 11:57 thinclient_drives
 drwxr-xr-x 3 user user 4.0K  4月 12 13:57 Videos
 ```
 

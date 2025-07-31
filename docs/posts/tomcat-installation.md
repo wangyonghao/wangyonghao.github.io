@@ -1,3 +1,8 @@
+---
+title: CentOS 下安装 Tomcat
+tags: [Tomcat]
+date: 2024-07-21 09:37
+---
 ## 1. 概述
 
 本文介绍 Linux 系统安装 Tomcat 后，设置开机自启动的方法。

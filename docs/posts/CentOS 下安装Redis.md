@@ -1,7 +1,7 @@
 ---
 title: CentOS 下安装 Redis
 tags: [CentOS]
-date: 2025-07-01 10:00
+date: 2024-01-31 22:43
 ---
 # CentOS 下安装 Redis
 本文介绍了在 CentOS 7.9 下安装配置 Redis 的过程。

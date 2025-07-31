@@ -7,7 +7,7 @@
           {{ article.title }}
         </a>
       </div>
-      <p v-if="article.description" class="article-desc ellipsis-2">{{ article.description }}</p>
+      <p v-if="article.description" class="article-desc">{{ article.description }}</p>
       <div class="meta-row">
         <span class="meta-date">
           <svg class="icon-clock" viewBox="0 0 16 16" width="1em" height="1em" style="vertical-align:middle;margin-right:2px;"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 4v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
@@ -93,10 +93,8 @@ const pagedArticles = computed(() => {
   font-size: 1em;
   margin: 4px 0 6px 0;
   line-height: 1.6;
-}
-
-.ellipsis-2 {
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;

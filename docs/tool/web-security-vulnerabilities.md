@@ -1,7 +1,7 @@
 ---
 title: 常见Web 漏洞修复建议
 tags: [security]
-date: 2025/01/01 10:00
+date: 2025-01-01 10:00
 ---
 
 

@@ -1,8 +1,15 @@
+---
+title: 自定义注解实现 Quartz 定时任务
+date: 2024-07-22 22:28
+tags: [Quartz]
+---
+# 实现 Quartz 定时任务 <Badge>实验性</Badge>
+
 ### 痛点
 
-1. 使用Spring XML 配置 Quartz Job 方式较为繁琐。 JobDetail 和 Trigger
-2. 各业务模块的 Job 必须在定义 SchedulerFactoryBean 时统一注册。无法按模块拆分Job配置。
-3. Job 类必须继承 QuartzJobBean ，不利于扩展。
+1. 传统项目中基于 Spring XML 配置 Quartz Job 方式较为繁琐。 JobDetail 和 Trigger
+2. 各业务模块的 Job 必须在定义 SchedulerFactoryBean 时统一注册，无法按模块拆分Job配置。
+3. Job 类必须继承 QuartzJobBean。
 4. 希望向 Spring 原生的计划任务一样，只需要 @Scheduled("cron") 注解即可实现
 
 ### 实现效果
@@ -30,7 +37,6 @@ QuartzAnnotationProcessor 实现了将带 @QuartzScheduled 的方法 注册为Qu
 Job 简单示例
 
 ```java
-/** 凌晨自动同步一次 */
 @Component
 public class xxJob{
     @QuartzScheduled("20 0 0 * * ?")
