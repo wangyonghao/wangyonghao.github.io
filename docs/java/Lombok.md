@@ -1,6 +1,7 @@
 ---
 title: Lombok
 date: 2025-06-21 21:15
+description: Lombok 作为 Java 生态中一个极为流行的工具，它通过注解在编译期自动生成常见的样板代码，如getter、setter、构造函数、equals()、hashCode()、toString()等，没有任何额外的运行时开销或依赖。这极大地减少了代码的冗余，大幅提升了开发效率和代码的可读性。
 ---
 # Lombok
 Lombok 作为 Java 生态中一个极为流行的工具，它通过注解（Annotations）在**编译期**自动生成常见的样板代码（Boilerplate Code），如getter、setter、构造函数、equals()、hashCode()、toString()等，没有任何额外的**运行时**开销或依赖。这极大地减少了代码的冗余，大幅提升了开发效率和代码的可读性。
