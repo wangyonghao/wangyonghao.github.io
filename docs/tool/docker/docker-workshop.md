@@ -1,4 +1,10 @@
+
+
 # Docker 运行 MySQL
+
+最初，项目构建和各环境部署都依赖于团队中经验丰富的成员手动操作。然而，即使是熟练的工程师也难以避免因不完全了解代码变更范围、遗漏修改配置文件等失误，导致需要重复执行打包和部署流程，这使得版本发布成为一项繁重且容易出错的工作。
+
+CI/CD 是持续集成（Continuous Integration） 和 持续交付（Continuous Delivery）的英文缩写 ，它是一种软件开发方法，旨在持续的构建、测试、部署和监控代码变更。 简单来说，当提交代码时 CI/CD 系统会自动化构建项目、运行测试，并在测试通过后部署到测试环境甚至生产环境。 以确保每次代码提交都能快速验证，并及时发现和修复问题。
 
 
 
@@ -267,3 +273,31 @@ ts/domain.crt -e REGISTRY_HTTP_TLS_KEY=/root/certs/domain.key registry
 ```
 
 [那么如何登录到docker虚拟机中呢？](<https://www.jianshu.com/p/8c22cdfc0ffd>)
+
+
+
+## 故障排查
+
+### Removal In Progress 状态的容器无法删除
+
+**问题起因：** 清理Docker容器时发现，有一个容器始终处于 Removal In Progress 状态，强制删除时报错。
+
+```
+$ docker ps -a | grep 1442cf6452b7
+1442cf6452b7    gitlab/gitlab-ce    "/assets/wrapper"    3 years ago    Removal In Progress    gitlab
+
+$ docker rm -f 1442cf6452b7
+Error response from daemon: container 1442cf6452b79d44ce6fdb66e6fb3a75383e1044ef70f740d2afe1273e91156b: driver "overlay2" failed to remove root filesystem: unlinkat /var/lib/docker/overlay2/3635d12dcb9e2f7e3c661a09b335f55a6f738da9fe3d6270c4815a575a2f4b7b/diff/root/.cache/lesskey: operation not permitted
+```
+
+**解决办法：**使用 `chattr` 取消文件的 Immutable 属性
+
+```
+$ chattr -R -i /var/lib/docker/overlay2/3635d12dcb9e2f7e3c661a09b335f55a6f738da9fe3d6270c4815a575a2f4b7b/diff/
+
+$ docker rm 1442cf6452b7
+1442cf6452b7
+```
+
+
+
