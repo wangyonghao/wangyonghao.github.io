@@ -9,13 +9,16 @@ export const navbar = <DefaultTheme.NavItem[]>[
   {
     text: '专题',
     items: [
-      { text: 'Java', items:[
+      { text: '', items:[
         { text: 'Java 基础', link: '/java/' },
         { text: 'Java 框架', link: '/java-framework/' },
       ]},
-      { text: 'Database', link: '/datebase/' },
       { text: 'Software Design', link: '/software-design/' },
-      { text: '工具篇', link: '/tool/' },
+      { text: 'Database', link: '/datebase/' },
+      { text: '', items:[
+        { text: 'Docker', link: '/docker/' },
+        { text: '工具篇', link: '/tool/' },
+      ]},
     ]
   },
   { text: '关于', link: '/about' },
@@ -39,6 +42,7 @@ export const sidebar = generateSidebar([
   generaterOptions('java'),
   generaterOptions('java-framework'),
   generaterOptions('database'),
+  generaterOptions('docker'),
   generaterOptions('tool'),
   generaterOptions('software-design'),
 ])
