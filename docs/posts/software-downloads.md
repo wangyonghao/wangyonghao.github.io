@@ -6,7 +6,7 @@
 
 * [Internet Archive](https://archive.org/details/Windows11Build26100)
 
-
+Oracle jdk： https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
 
 ## 开发工具与插件
 

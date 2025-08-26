@@ -8,7 +8,7 @@ ITAS、Portal、ECM 都是运行在服务器端的 Java 应用程序，必须部
 - Java8 
 - 已配置环境变量JRE_HOME
 ### 3. 下载 Tomcat
-这里下载的是[支持Java8](https://tomcat.apache.org/whichversion.html)的最新发行版[9.0.74](https://tomcat.apache.org/download-90.cgi#9.0.74).
+这里下载的是[支持Java8](https://tomcat.apache.org/whichversion.html)的最新发行版[9.0.74](https://tomcat.apache.org/download-90.cgi#9.0.74). 
 ```shell
 wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.74/bin/apache-tomcat-9.0.74.tar.gz
 ```

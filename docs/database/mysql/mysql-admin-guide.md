@@ -113,7 +113,6 @@ grant all privileges  on db1.t1 to "mjj"@'%';
 
 #取消权限
 取消来自远程服务器的mjj用户对数据库db1的所有表的所有权限
-
 revoke all on db1.* from 'mjj'@"%";  
 
 取消来自远程服务器的mjj用户所有数据库的所有的表的权限
